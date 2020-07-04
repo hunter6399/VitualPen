@@ -6,8 +6,10 @@ if load_from_disk:
     penval = np.load('penval.npy')
 
 cap = cv2.VideoCapture(0)
+cap.set(3, 1280)
+cap.set(4, 960)
 pen_img = cv2.resize(cv2.imread('pen.png', 1), (50, 50))
-eraser_img = cv2.resize(cv2.imread('eraser.jpg', 1), (50, 50))
+eraser_img = cv2.resize(cv2.imread('eraser.png', 1), (50, 50))
 kernel = np.ones((5, 5), np.uint8)
 cv2.namedWindow('image', cv2.WINDOW_NORMAL)
 
