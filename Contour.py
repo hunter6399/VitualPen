@@ -11,8 +11,8 @@ cap.set(4, 960)
 pen_img = cv2.resize(cv2.imread('pen.png', 1), (50, 50))
 eraser_img = cv2.resize(cv2.imread('eraser.png', 1), (50, 50))
 kernel = np.ones((5, 5), np.uint8)
-cv2.namedWindow('image', cv2.WINDOW_NORMAL)
-
+cv2.namedWindow('VirtualPen', cv2.WINDOW_NORMAL)
+color=[255,0,0]
 canvas = None
 
 
@@ -75,7 +75,7 @@ while (1):
             if switch == 'Pen':
                 # Draw the line on the canvas
                 canvas = cv2.line(canvas, (x1, y1),
-                                  (x2, y2), [255, 0, 0], 5)
+                                  (x2, y2), color, 5)
 
             else:
                 cv2.circle(canvas, (x2, y2), 20,
